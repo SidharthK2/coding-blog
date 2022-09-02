@@ -6,25 +6,33 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen m-2">
       <Head>
         <title>Coding Blog</title>
         <meta name="keywords" content="coding, blog, coding blog" />
       </Head>
 
-      <nav className="w-screen p-2 m-2">
+      <nav className="w-screen">
         <ul className="flex justify-evenly text-xs">
           <Link href="/home">
-            <li>Home</li>
+            <a>
+              <li>Home</li>
+            </a>
           </Link>
           <Link href="/about">
-            <li>About</li>
+            <a>
+              <li>About</li>
+            </a>
           </Link>
           <Link href="/blogs">
-            <li>Blogs</li>
+            <a>
+              <li>Blogs</li>
+            </a>
           </Link>
           <Link href="/contact">
-            <li>Contact</li>
+            <a>
+              <li>Contact</li>
+            </a>
           </Link>
         </ul>
       </nav>
@@ -33,6 +41,14 @@ export default function Home() {
         <div className="title flex flex-col gap-2 my-4 p-2 text-center">
           <h1 className="text-4xl font-medium">Coding Blog</h1>
           <p className="text-sm">A blog for everything code</p>
+
+          <Image
+            className="rounded-t-2xl rounded-l-2xl"
+            src="/../public/coding.jpg"
+            width={5}
+            height={3}
+            layout="responsive"
+          ></Image>
         </div>
         <div className="blogs flex flex-col gap-6 text-center">
           <h2 className="text-xl">Popular Blogs</h2>
