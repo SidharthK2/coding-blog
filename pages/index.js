@@ -12,35 +12,10 @@ export default function Home() {
         <meta name="keywords" content="coding, blog, coding blog" />
       </Head>
 
-      <nav className="w-screen">
-        <ul className="flex justify-evenly text-xs">
-          <Link href="/home">
-            <a>
-              <li>Home</li>
-            </a>
-          </Link>
-          <Link href="/about">
-            <a>
-              <li>About</li>
-            </a>
-          </Link>
-          <Link href="/blogs">
-            <a>
-              <li>Blogs</li>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a>
-              <li>Contact</li>
-            </a>
-          </Link>
-        </ul>
-      </nav>
-
       <main className="main flex flex-col h-screen">
         <div className="title flex flex-col gap-2 my-4 p-2 text-center">
           <h1 className="text-4xl font-medium">Coding Blog</h1>
-          <p className="text-sm">A blog for everything code</p>
+          <p className="text-sm mb-3">A blog for everything code</p>
 
           <Image
             className="rounded-t-2xl rounded-l-2xl"
@@ -50,25 +25,27 @@ export default function Home() {
             layout="responsive"
           ></Image>
         </div>
-        <div className="blogs flex flex-col gap-6 text-center">
-          <h2 className="text-xl">Popular Blogs</h2>
-          <div className="blogItem">
-            <h3 className="font-medium">How to learn JavaScript in 2022</h3>
-            <p className="text-sm">
-              JavaScript is the language used for building the web.
-            </p>
-          </div>
-          <div className="blogItem">
-            <h3 className="font-medium">How to learn JavaScript in 2022</h3>
-            <p className="text-sm">
-              JavaScript is the language used for building the web.
-            </p>
-          </div>
-          <div className="blogItem">
-            <h3 className="font-medium">How to learn JavaScript in 2022</h3>
-            <p className="text-sm">
-              JavaScript is the language used for building the web.
-            </p>
+        <div className="flex flex-col text-center">
+          <h2 className="text-xl my-2">Popular Blogs</h2>
+          <div className="blogs flex flex-col gap-6 text-center">
+            <div className="blogItem">
+              <h3 className="font-medium">How to learn JavaScript in 2022</h3>
+              <p className="text-sm">
+                JavaScript is the language used for building the web.
+              </p>
+            </div>
+            <div className="blogItem">
+              <h3 className="font-medium">How to learn JavaScript in 2022</h3>
+              <p className="text-sm">
+                JavaScript is the language used for building the web.
+              </p>
+            </div>
+            <div className="blogItem">
+              <h3 className="font-medium">How to learn JavaScript in 2022</h3>
+              <p className="text-sm">
+                JavaScript is the language used for building the web.
+              </p>
+            </div>
           </div>
         </div>
       </main>
