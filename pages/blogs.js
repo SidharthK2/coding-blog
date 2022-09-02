@@ -13,23 +13,23 @@ const Blogs = () => {
             </h3>
           </Link>
           <p className="text-sm">
-            JavaScript is the language used for building the web.
+            JavaScript is the language used for building the websites
           </p>
         </div>
         <div className="blogItem">
           <h3 className="font-medium cursor-pointer">
-            How to learn JavaScript in 2022
+            How to learn Python in 2022
           </h3>
           <p className="text-sm">
-            JavaScript is the language used for building the web.
+            Python is one of the most widely used programming languages
           </p>
         </div>
         <div className="blogItem">
           <h3 className="font-medium cursor-pointer">
-            How to learn JavaScript in 2022
+            How to learn React.js in 2022
           </h3>
           <p className="text-sm">
-            JavaScript is the language used for building the web.
+            React.js is a free and open-source front-end JavaScript library
           </p>
         </div>
       </div>
