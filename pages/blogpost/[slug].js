@@ -1,23 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import * as fs from "fs";
 
-const slug = (props) => {
+const Slug = (props) => {
   const [blog, setBlog] = useState(props.myBlog);
+  function createMarkup(c) {
+    return { __html: c };
+  }
+
   return (
     <div className="flex flex-col max-w-md m-4 p-4 gap-1">
       <h1 className="font-medium">{blog && blog.title}</h1>
       <hr />
-      <p className="text-xs">{blog && blog.content}</p>
+      {blog && <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>}
     </div>
   );
 };
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query;
-  let data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
-  let myBlog = await data.json();
+export async function getStaticPaths() {
   return {
-    props: { myBlog },
+    paths: [
+      { params: { slug: "how-to-learn-js" } },
+      { params: { slug: "how-to-learn-py" } },
+      { params: { slug: "how-to-learn-react" } },
+    ],
+    fallback: false, // can also be true or 'blocking'
   };
 }
-export default slug;
+
+export async function getStaticProps(context) {
+  const { slug } = context.params;
+  let myBlog = await fs.promises.readFile(`blogdata/${slug}.json`, "utf-8");
+  return {
+    props: { myBlog: JSON.parse(myBlog) },
+  };
+}
+export default Slug;

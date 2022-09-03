@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Script from "next/script";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
@@ -16,14 +15,14 @@ export default function Home() {
         <div className="title flex flex-col gap-2 my-4 p-2 text-center">
           <h1 className="text-4xl font-medium">Coding Blog</h1>
           <p className="text-sm mb-3">A blog for everything code</p>
-
-          <Image
-            className="rounded-t-2xl rounded-l-2xl"
-            src="/coding.jpg"
-            width={5}
-            height={3}
-            layout="responsive"
-          ></Image>
+          <div className="imageContainer">
+            <img
+              className="rounded-t-2xl rounded-l-2xl"
+              src="/coding.jpg"
+              alt="coding image"
+              width={400}
+            ></img>
+          </div>
         </div>
         <div className="flex flex-col text-center">
           <h2 className="text-xl my-2">Popular Blogs</h2>
