@@ -19,7 +19,7 @@ export default function Home() {
 
           <Image
             className="rounded-t-2xl rounded-l-2xl"
-            src="/../public/coding.jpg"
+            src="/coding.jpg"
             width={5}
             height={3}
             layout="responsive"

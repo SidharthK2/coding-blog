@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function Blogs() {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:3000/api/blog")
-      .then((v) => v.json())
-      .then((data) => {
-        setBlogs(data);
-      });
-  }, []);
+export default function Blogs(props) {
+  const [blogs, setBlogs] = useState(props.allBlogs);
   return (
     <div className="flex flex-col m-2 p-2">
       <h2 className="text-xl m-4">Latest Blogs</h2>
@@ -31,4 +24,12 @@ export default function Blogs() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  let data = await fetch("http://localhost:3000/api/blog");
+  let allBlogs = await data.json();
+  return {
+    props: { allBlogs },
+  };
 }
