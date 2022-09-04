@@ -1,9 +1,11 @@
 import React from "react";
 
-const About = () => {
+const Contact = () => {
   return (
-    <div className="text-center m-4 p-2">Just another programming blog</div>
+    <div className="flex justify-center items-center m-4 p-4 text-3xl">
+      🚧 Under Construction...{" "}
+    </div>
   );
 };
 
-export default About;
+export default Contact;

@@ -1,11 +1,9 @@
 import React from "react";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <div className="flex justify-center items-center m-4 p-4 text-3xl">
-      🚧 Under Construction...{" "}
+    <div>
+      <h1>Contact Us</h1>
     </div>
   );
-};
-
-export default Contact;
+}
