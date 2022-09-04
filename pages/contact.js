@@ -7,8 +7,29 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
+    const data = { name, email, message };
+    console.log(JSON.stringify(data));
+
+    fetch("http://localhost:3000/api/postContact/", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log("Success:", data);
+        alert("Sumbitted!");
+        setEmail("");
+        setMessage("");
+        setName("");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
+
   const handleChange = (e) => {
     if (e.target.name == "name") {
       setName(e.target.value);
